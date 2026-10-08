@@ -9,8 +9,6 @@ jobs:
         with:
           flutter-version: '3.22.0'
           channel: 'stable'
-      - name: Create Android project
-        run: flutter create. --project-name global_forex_international --org com.globalforex --platforms android
       - name: Get packages
         run: flutter pub get
       - name: Build APK
