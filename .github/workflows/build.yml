@@ -9,6 +9,12 @@ jobs:
         with:
           flutter-version: '3.22.0'
           channel: 'stable'
+      - name: Create Android folder
+        run: |
+          flutter create. --project-name global_forex_international --org com.globalforex --platforms android --no-pub
+          rm -f lib/main.dart
+          if [ -f main.dart ]; then cp main.dart lib/main.dart; fi
+          if [ -f app.dart ]; then cp app.dart lib/main.dart; fi
       - name: Get packages
         run: flutter pub get
       - name: Build APK
